@@ -52,9 +52,9 @@ def swipe_down_screen(driver):
     # 드라이버에 터치 장치 등록
     actions.w3c_actions.devices.append(touch)
 
-    # [수정된 핵심 로직] 
+    # [로직 수정] 
     # move_to_location()에서 duration을 제거하는 대신, 
-    # pointer_down 이후 이동 액션 과정에서 동작 시간을 명시적으로 관리하도록 변경합니다.
+    # pointer_down 이후 이동 액션 과정에서 동작 시간을 명시적으로 관리하도록 변경
     
     # 1단계: 손가락을 스크롤 시작점으로 이동
     actions.w3c_actions.pointer_action.move_to_location(start_x, start_y)
@@ -67,7 +67,7 @@ def swipe_down_screen(driver):
     # 4단계: 목적지(상단 좌표)로 이동 (duration 인자 제거!)
     actions.w3c_actions.pointer_action.move_to_location(end_x, end_y)
 
-    # 중요 💡: 손가락을 떼기 전에도 0.5초 멈춰서 화면이 튕겨 나가는 것을 방지합니다.
+    # 중요 💡: 손가락을 떼기 전에도 0.5초 멈춰서 화면이 튕겨 나가는 것을 방지
     actions.w3c_actions.pointer_action.pause(0.5)
     # 5단계: 손가락을 화면에서 뗌
     actions.w3c_actions.pointer_action.pointer_up(0)
@@ -103,7 +103,7 @@ try:
 
     # [SH_01] 정상 흐름: '치킨' 입력 후 검색 및 첫 번째 매장 클릭
     
-    # 1. 글자만 순수하게 타이핑 (뒤에 Keys.ENTER를 절대 붙이지 마세요)
+    # 1. 글자만 순수하게 타이핑 (뒤에 Keys.ENTER를 절대 붙이지 않음)
     search_input.send_keys("치킨") 
     time.sleep(0.5)
     # 2. 키보드가 활성화된 상태에서 안드로이드 시스템의 '검색/엔터' 물리 키코드(66) 직접 주입
@@ -221,7 +221,7 @@ try:
         # 만약 버튼이 한 번에 안 보이면 한 번 더 실행
         # swipe_down_screen(driver)
         
-        # text("글자") 대신 textContains("글자")를 사용하여 부분 일치하는 요소를 탐색합니다.
+        # text("글자") 대신 textContains("글자")를 사용하여 부분 일치하는 요소를 탐색
         more_btn = wait.until(
             EC.presence_of_element_located((By.XPATH, "//android.widget.TextView[contains(@text, '검색결과 더보기')]"))
             
