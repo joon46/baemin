@@ -29,3 +29,32 @@
 - W3C Actions API 제스처 구현: PointerInput 및 ActionChains를 활용하여 화면 스와이프, Pull-to-Refresh, Hold 제스처 등 모바일 터치 액션 구현
 
 - 동적 대기 및 예외 처리: WebDriverWait와 expected_conditions를 활용해 네트워크 지연이나 비동기 UI 렌더링 환경에서도 안정적인 테스트 수행
+
+
+└── README.md         # 프로젝트 안내 문서
+🚀 Getting Started
+1. Prerequisites
+Python 3.9+
+
+Appium Server 2.x
+
+Android SDK (UiAutomator2)
+
+Android Emulator 또는 실기기 (ADB 연결 필요)
+
+2. Installation
+Bash
+### 관련 라이브러리 설치
+pip install pytest pytest-appium Appium-Python-Client selenium <br>
+3. Execution
+Bash
+### Appium 서버 실행 (기본 포트: 4723)
+appium
+
+### 전체 테스트 케이스 실행
+pytest -v
+
+### 개별 테스트 파일 실행
+pytest test_search.py
+pytest test_shop1.py
+pytest test_shop2.py
