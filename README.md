@@ -6,7 +6,7 @@
 - Library,"Selenium WebDriver, Appium Python Client"
 - Target Platform,Android Emulator (or Physical Device)
 <br>
-Key Test Scenarios & Coverage <br> <br>
+✨Key Test Scenarios & Coverage <br> <br>
 
 본 프로젝트는 서비스의 핵심 사용자 시나리오 및 예외 상황(Edge Cases)을 자동화하여 검증합니다. <br>
 
