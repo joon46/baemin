@@ -118,7 +118,7 @@ class TestBaeminShop:
         
         time.sleep(1.5) # 화면 렌더링 완료 대기
         
-        # 2. 이제 화면 안으로 드러난 '전체보기' 버튼을 XPath로 특정해서 클릭합니다.
+        # 2. 화면 안으로 드러난 '전체보기' 버튼을 XPath로 특정해서 클릭.
         try:
             view_all_btn = self.driver.find_element(AppiumBy.XPATH, "//androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[1]/android.view.View[3]/android.view.View/android.view.View/android.view.View[6]")
             view_all_btn.click()
@@ -197,11 +197,11 @@ class TestBaeminShop:
         except TimeoutException:
             # ❌ 이전 테스트들처럼 타임아웃 예외가 발생했을 때 처리할 로직
             print("❌ [SHOP_03 실패] TimeoutException 발생: 드래그 중 새로고침 토스트 메시지를 찾지 못했습니다.")
-            # pytest에서 명시적으로 실패를 발생시킵니다.
+            # pytest에서 명시적으로 실패를 발생.
             raise AssertionError("드래그 중에 새로고침 토스트 메시지가 화면에 표시되지 않았습니다.")
             
         finally:
-            # 4. 성공하든, TimeoutException이 나든 손가락은 무조건 떼어주어야 에뮬레이터가 먹통이 안 됩니다.
+            # 4. 손가락은 무조건 떼어주어야 에뮬레이터가 먹통이 안 됨.
             try:
                 actions.release()  # 👈 현재 누르고 있는 포인터를 자연스럽게 해제
                 actions.perform()
