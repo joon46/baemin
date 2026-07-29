@@ -33,7 +33,7 @@
 
 └── README.md         # 프로젝트 안내 문서
 🚀 Getting Started
-1. Prerequisites
+## 1. Prerequisites
 Python 3.9+
 
 Appium Server 2.x
@@ -42,19 +42,19 @@ Android SDK (UiAutomator2)
 
 Android Emulator 또는 실기기 (ADB 연결 필요)
 
-2. Installation
+## 2. Installation
 Bash
-### 관련 라이브러리 설치
+- 관련 라이브러리 설치
 pip install pytest pytest-appium Appium-Python-Client selenium <br>
-3. Execution
+# 3. Execution
 Bash
-### Appium 서버 실행 (기본 포트: 4723)
+- Appium 서버 실행 (기본 포트: 4723)
 appium
 
-### 전체 테스트 케이스 실행
+- 전체 테스트 케이스 실행
 pytest -v
 
-### 개별 테스트 파일 실행
+- 개별 테스트 파일 실행
 pytest test_search.py
 pytest test_shop1.py
 pytest test_shop2.py
