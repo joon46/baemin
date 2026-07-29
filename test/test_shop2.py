@@ -45,7 +45,7 @@ class TestBaeminShop:
         사전 조건: '타임딜' 영역이 보여지는 상태
         """
         # 1. '오늘' 버튼 클릭 (이전 절차 리프레시나 타임딜 확인용)
-        # 팁: '오늘' 텍스트를 가진 요소를 명확하게 지정하여 클릭합니다.
+        # 팁: '오늘' 텍스트를 가진 요소를 명확하게 지정하여 클릭.
         today_button_xpath = (
             "//android.widget.TextView[contains(@text, '오늘')]"
         )
@@ -127,7 +127,7 @@ class TestBaeminShop:
         print("\n[SHOP_05 테스트 시작] 무료배달 안내 문구 검증 및 장바구니 화면 진입")
 
         # 1. 하단 무료배달 안내 텍스트 노출 검증
-        # '더 담으면', '무료배달', '장바구니' 등의 키워드가 포함된 텍스트/뷰 요소를 탐색합니다.
+        # '더 담으면', '무료배달', '장바구니' 등의 키워드가 포함된 텍스트/뷰 요소를 탐색.
         free_shipping_xpath = "//*[contains(@content-desc, '무료배달') or contains(@text, '무료배달') or contains(@content-desc, '더 담으면') or contains(@text, '더 담으면')]"
         
         try:
@@ -140,7 +140,7 @@ class TestBaeminShop:
             pytest.fail(f"❌ [SHOP_05 단계 실패] 주문가능 안내 문구를 찾을 수 없습니다: {e}")
 
         # 2. 하단 장바구니 플로팅 버튼 탐색 및 클릭
-        # '장바구니' 문구가 들어간 버튼 영역을 지정하여 클릭합니다.
+        # '장바구니' 문구가 들어간 버튼 영역을 지정하여 클릭.
         cart_button_xpath = "//*[contains(@content-desc, '장바구니') or contains(@text, '장바구니')]"
         
         try:
@@ -154,7 +154,7 @@ class TestBaeminShop:
             pytest.fail(f"❌ [SHOP_05 단계 실패] 장바구니 버튼을 클릭할 수 없습니다: {e}")
 
         # 3. 장바구니 화면 진입 검증
-        # 장바구니 상단 타이틀 또는 내부 고유 요소(예: '장바구니' 타이틀 / '주문하기' 버튼 등)를 검증합니다.
+        # 장바구니 상단 타이틀 또는 내부 고유 요소(예: '장바구니' 타이틀 / '주문하기' 버튼 등)를 검증.
         cart_title_xpath = "//*[contains(@content-desc, '장바구니') or contains(@text, '장바구니')]"
         
         try:
