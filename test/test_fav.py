@@ -28,7 +28,7 @@ class TestBaeminFavorite:
             self.driver.quit()
 
     
-    def test_HT_03_empty_favorite_go_to_shopping_store(self):
+    def test_HT_01_empty_favorite_go_to_shopping_store(self):
         """
         [HT_01] 찜한 가게 목록(장보기·쇼핑)이 비어있을 때 '가게 둘러보기' 클릭 시 장보기·쇼핑 페이지 이동 검증
         """
