@@ -1,60 +1,43 @@
+# 📱 모바일 앱(배달의민족) UI/기능 자동화 테스트 프로젝트
 
-구분,기술 스택 / 도구
-- Language,Python 3.x
-- Framework,Pytest
-- Automation Tool,Appium (UiAutomator2 Engine)
-- Library,"Selenium WebDriver, Appium Python Client"
-- Target Platform,Android Emulator (or Physical Device)
-<br>
-✨Key Test Scenarios & Coverage <br> <br>
+> **Appium**과 **Pytest**를 활용하여 모바일 앱의 핵심 기능 및 예외 시나리오를 검증하고, 동적 대기(Explicit Wait) 및 제스처 제어 기법을 적용한 테스트 자동화 스위트 구축 프로젝트입니다.
 
-본 프로젝트는 서비스의 핵심 사용자 시나리오 및 예외 상황(Edge Cases)을 자동화하여 검증합니다. <br>
+---
 
-1. 검색 기능 (test_search.py)
-- [SH_07] 실시간 연관 검색어 레이어 검증: 키워드 입력 시 화면 하단에 연관 검색어 레이어가 정상 노출되는지 검증
+## 📌 프로젝트 개요
 
-- [SH_08] 미입력 검색 예외 처리: 빈 검색어 상태에서 엔터(검색) 입력 시 앱이 정상 대응하는지 예외 시나리오 테스트
+* **대상 애플리케이션**: 배달의민족 Android App (`com.sampleapp`)
+* **목적**:
+  * 주요 유저 동선(검색, 주소 설정, 찜 목록, 매장 필터링 및 정렬)의 기능 정상 작동 검증
+  * 외계어 입력, 빈 값 검색 등 예외 상황 및 경계값에 대한 시스템 안정성 검증
+  * 화면 스크롤, Hold(새로고침), 터치 액션 등 모바일 특화 제스처 자동화 구현
+* **주요 특징**:
+  * `Pytest` 기반의 테스트 모듈화 및 Class/Fixture 관리 (`driver_setup`)
+  * `WebDriverWait`과 `Expected Conditions`를 활용한 비동기 UI 대응 (동적 대기)
+  * `ActionChains` 및 `PointerInput`을 활용한 복합 제스처 제어
 
-2. 스토어 & 홈 기능 (test_shop1.py)
-- [SHOP_03] Pull-to-Refresh 및 토스트 메시지 감지: W3C Actions API(PointerInput) 기반 드래그 제스처로 화면을 당겨 새로고침 시 발생하는 토스트 메시지 수집 및 검증
+---
 
-3. 카테고리 & 예외 안내 (test_shop2.py)
-- [SHOP_07] 가로 스크롤 & 미지원 영역 안내 검증: 상단 카테고리 탭 가로 스크롤 수행 후 특정 탭 클릭 시 "근처에 주문 가능한 가게가 없어요" 등의 예외 안내 문구 노출 검증<br>
+## 🛠 기술 스택 (Tech Stack)
 
-✨ Key Technical Highlights
-- Pytest Fixture 기반 테스트 관리: @pytest.fixture(scope="class")를 활용해 Appium 드라이버의 세션 및 에뮬레이터 연결 상태 관리
+| 구분 | 기술 / 도구 |
+| :--- | :--- |
+| **Language** | Python 3.x |
+| **Framework** | Pytest, Appium Python Client |
+| **Automation Tool** | Appium Server (UiAutomator2) |
+| **Libraries** | Selenium (`WebDriverWait`, `ActionChains`, `By`) |
+| **Environment** | Android Emulator (Android OS) |
+| **Test Design** | Test Case (TC) 명세서 작성 및 관리 (CSV/Excel) |
 
-- 상태 유지 기능 (noReset & dontStopApp): no_reset=True 및 dontStopApp 옵션을 활용하여 이전 테스트 세션의 앱 화면 상태를 연속성 있게 이어받아 실행 시간 단축
+---
 
-- W3C Actions API 제스처 구현: PointerInput 및 ActionChains를 활용하여 화면 스와이프, Pull-to-Refresh, Hold 제스처 등 모바일 터치 액션 구현
+## 🏗 프로젝트 구조 (Project Structure)
 
-- 동적 대기 및 예외 처리: WebDriverWait와 expected_conditions를 활용해 네트워크 지연이나 비동기 UI 렌더링 환경에서도 안정적인 테스트 수행
-
-
-└── README.md         # 프로젝트 안내 문서
-🚀 Getting Started
-## 1. Prerequisites
-Python 3.9+
-
-Appium Server 2.x
-
-Android SDK (UiAutomator2)
-
-Android Emulator 또는 실기기 (ADB 연결 필요)
-
-## 2. Installation
-Bash
-- 관련 라이브러리 설치
-pip install pytest pytest-appium Appium-Python-Client selenium <br>
-# 3. Execution
-Bash
-- Appium 서버 실행 (기본 포트: 4723)
-appium
-
-- 전체 테스트 케이스 실행
-pytest -v
-
-- 개별 테스트 파일 실행
-pytest test_search.py
-pytest test_shop1.py
-pytest test_shop2.py
+```text
+├── Test Case 배민.xlsx - Sheet1.csv  # 명세화된 테스트 케이스 (TC_ID, 우선순위, 절차, 기대결과)
+├── test_search.py                    # [SH_01~08] 검색창, 검색어 삭제, 연관검색어, 예외처리 검증
+├── test_address.py                   # [ADDR_01~04] 주소 검색 특수문자 예외 처리 및 주소 삭제 검증
+├── test_fav.py                       # [HT_03] 찜 목록 진입 및 빈 화면 내 둘러보기 동작 검증
+├── test_shop1.py                     # [SHOP_03] 화면 드래그/Hold 제스처를 통한 새로고침 토스트 메시지 검증
+├── test_shop2.py                     # [SHOP_06] '픽업가능' 필터링 선택/해제 및 초기화 동작 검증
+└── test_shop3.py                     # [SHOP_08] 매장 정렬 필터(거리순 등) 데이터 파싱 및 정렬 검증
