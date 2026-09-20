@@ -1,3 +1,5 @@
+> test case : https://docs.google.com/spreadsheets/d/14BiPmGkQDoOJl_PA2RA4Gsqe60mS13pW7oZk-md5fGQ/edit?usp=sharing
+
 # 📱 모바일 앱(배달의민족) UI/기능 자동화 테스트 프로젝트
 
 > **Appium**과 **Pytest**를 활용하여 모바일 앱의 핵심 기능 및 예외 시나리오를 검증하고, 동적 대기(Explicit Wait) 및 제스처 제어 기법을 적용한 테스트 자동화 스위트 구축 프로젝트입니다.
