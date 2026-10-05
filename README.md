@@ -48,18 +48,18 @@
 ## 🧪 주요 테스트 시나리오 및 검증 내용
 1. 검색 및 예외 처리 (test_search.py)
   기능 검증:
-   - [SH_01] 검색어 입력 후 결과 노출 및 첫 번째 매장 진입 확인
-   - [SH_06] 카테고리 탭 전환 검증
+   - [SH_01] 검색어 입력후 매장 진입 (EC.presence_of_element_located로 DOM 생성을 확인, EC.element_to_be_clickable로 상호작용 가능 상태를 검증한 후 안전하게 진입 처리.)
+   - [SH_06] 카테고리 탭 전환 검증 (EC.presence_of_element_located로 element 확인)
    - [SH_07] 연관 검색어 레이어 실시간 팝업 검증
 
   예외 처리 (Negative Test):
-   - [SH_02] 외계어(꽭) 입력 시 앱 크래시 없이 '검색 결과 없음' 문구 노출 확인
+   - [SH_02] 외계어(꽭) 입력 시 앱 크래시 없이 '검색 결과 없음' 문구 노출 확인 (특정 TextView가 노출되는지 검증)
    - [SH_08] 미입력(빈 값) 상태에서 검색 시 예외 처리 확인
 
   UI/UX:
-   - [SH_03] 입력어 일괄 삭제(X 버튼)
-   - [SH_04] 최근 검색어 노출 및 삭제
-   - [SH_05] 검색창 하단 인기검색어 순위
+   - [SH_03] 입력어 일괄 삭제(X 버튼) (get_attribute 이용해서 검색창 내부 내용 확인)
+   - [SH_04] 최근 검색어 노출 및 삭제 (TextView를 is_displayed()로 확인)
+   - [SH_05] 검색창 하단 인기검색어 순위 (EC.presence_of_element_located로 DOM 생성을 확인, EC.element_to_be_clickable로 상호작용 가능 상태를 검증)
 
 2. 주소 관리 (test_address.py)
 
