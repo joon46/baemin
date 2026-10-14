@@ -73,10 +73,15 @@
     - [ADDR_04] 주소 목록에서 삭제 버튼 클릭 및 2차 확인 팝업 대응 후 대상 항목의 비노출 상태(invisibility_of_element_located) 검증
 
 3. 모바일 제스처 & 비동기 UI 대응 (test_shop1.py, test_shop2.py)
-
+PointerInput과 ActionChains의 w3c를 이용하여 터치, 모션 등을 구현하고 기능 및 UI 검증
 - [SHOP_01] 검색창 진입 (webdriverwait으로 대기)
 - [SHOP_02] W3C Touch를 활용 스크롤 이후 화면 이동
 - [SHOP_03]  PointerInput을 활용해 화면을 누른 채 1.5초간 유지(Hold)하는 동작 구현 후, 생성되는 새로고침 토스트 메시지 감지
+
+수량 증감 동작, 장바구니 진입, 픽업 필터 적용 및 초기화 기능 검증
+- [SHOP_04] 타임딜 상품 수량 증감(+/-) 버튼 동작 및 상태 검증
+- [SHOP_05] 무료배달 안내 문구 노출 확인 및 장바구니 화면 진입/수량 원복 검증
+- [SHOP_06] '픽업가능' 매장 필터링 적용 및 초기화(리셋) 기능 검증 (is_selected 활용)
 
 동적 필터 검증: 필터 버튼 클릭 시 버튼 선택 상태(is_selected) 변경 및 목록 재정렬 반영 확인, '초기화' 버튼 동작 검증
 
