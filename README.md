@@ -18,7 +18,7 @@
   * `WebDriverWait`과 `Expected Conditions`를 활용한 비동기 UI 대응 (동적 대기)
   * `ActionChains` 및 `PointerInput`을 활용한 복합 제스처 제어
   * 서버/DB의 데이터와 UI 연동 상태 검증 (쿠폰 받기)
-  * try - except로 에러 발생하는 부분 확인
+  * try - except로 요소 미노출이나 타임아웃 같은 에러 대응
 
 ---
 
