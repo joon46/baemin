@@ -17,7 +17,8 @@
   * `Pytest` 기반의 테스트 모듈화 및 Class/Fixture 관리 (`driver_setup`)
   * `WebDriverWait`과 `Expected Conditions`를 활용한 비동기 UI 대응 (동적 대기)
   * `ActionChains` 및 `PointerInput`을 활용한 복합 제스처 제어
-  * 서버/DB의 데이터와 UI 연동 상태 검증 (ex : 쿠폰)
+  * 서버/DB의 데이터와 UI 연동 상태 검증 (쿠폰 받기)
+  * try - except로 에러 발생하는 부분 확인
 
 ---
 
@@ -40,7 +41,7 @@
 ├── Test Case 배민.xlsx - Sheet1.csv  # 명세화된 테스트 케이스 (TC_ID, 우선순위, 절차, 기대결과)
 ├── test_search.py                    # [SH_01~08] 검색창, 검색어 삭제, 연관검색어, 예외처리 검증
 ├── test_address.py                   # [ADDR_01~04] 주소 검색 특수문자 예외 처리 및 주소 삭제 검증
-├── test_fav.py                       # [HT_03] 찜 목록 진입 및 빈 화면 내 둘러보기 동작 검증
+├── test_fav.py                       # [HT_01] 찜 목록 진입 및 빈 화면 내 둘러보기 동작 검증
 ├── test_shop1.py                     # [SHOP_01 ~ 03] 화면 드래그/Hold 제스처를 통한 새로고침 토스트 메시지 검증
 ├── test_shop2.py                     # [SHOP_04 ~ 06] '픽업가능' 필터링 선택/해제 및 초기화 동작 검증
 ├── test_shop3.py                     # [SHOP_07 ~ 08] 매장 정렬 필터(거리순 등) 데이터 파싱 및 정렬 검증
