@@ -73,9 +73,10 @@
     - [ADDR_04] 주소 목록에서 삭제 버튼 클릭 및 2차 확인 팝업 대응 후 대상 항목의 비노출 상태(invisibility_of_element_located) 검증
 
 3. 모바일 제스처 & 비동기 UI 대응 (test_shop1.py, test_shop2.py)
-제스처 제어: PointerInput을 활용해 화면을 누른 채 1.5초간 유지(Hold)하는 동작 구현 후, 생성되는 새로고침 토스트 메시지 감지
-- [SHOP_01] 검색창 진입
-- [SHOP_02] 스크롤 이후 화면 이동
+
+- [SHOP_01] 검색창 진입 (webdriverwait으로 대기)
+- [SHOP_02] W3C Touch를 활용 스크롤 이후 화면 이동
+- [SHOP_03]  PointerInput을 활용해 화면을 누른 채 1.5초간 유지(Hold)하는 동작 구현 후, 생성되는 새로고침 토스트 메시지 감지
 
 동적 필터 검증: 필터 버튼 클릭 시 버튼 선택 상태(is_selected) 변경 및 목록 재정렬 반영 확인, '초기화' 버튼 동작 검증
 
