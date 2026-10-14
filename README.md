@@ -17,6 +17,7 @@
   * `Pytest` 기반의 테스트 모듈화 및 Class/Fixture 관리 (`driver_setup`)
   * `WebDriverWait`과 `Expected Conditions`를 활용한 비동기 UI 대응 (동적 대기)
   * `ActionChains` 및 `PointerInput`을 활용한 복합 제스처 제어
+  * 서버/DB의 데이터와 UI 연동 상태 검증 (ex : 쿠폰)
 
 ---
 
